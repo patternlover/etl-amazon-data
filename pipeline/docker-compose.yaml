@@ -1,0 +1,24 @@
+services:
+  pgdatabase: # Container hostname
+    image: postgres:18
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=amazon_purchases
+    volumes:
+      - amazon_purchases_data:/var/lib/postgresql
+    ports:
+      - "5432:5432"
+  pgadmin:  # Container hostname
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=pass
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    ports:
+      - "8085:80"
+
+volumes:
+  amazon_purchases_data:
+  pgadmin_data:
