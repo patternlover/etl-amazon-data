@@ -5,17 +5,17 @@ Data ingestion pipeline from the web to PostgreSQL, developed during the [Data E
 ## Project Structure
 
 ```
-.
-├── docker-compose.yml      # Persistent services (PostgreSQL + pgAdmin)
-├── Dockerfile              # Image for data ingestion
-├── ingest_data.py          # Ingestion script
-├── pyproject.toml          # Dependencies and project configuration
-├── uv.lock                 # Exact dependency versions
-├── .python-version         
-├── .gitignore
-└── README.md
+|-- .devcontainer/
+|-- .gitignore
+|-- README.md
+`-- pipeline
+    |-- .python-version
+    |-- Dockerfile            # Image for data ingestion
+    |-- docker-compose.yaml   # Persistent services (PostgreSQL + pgAdmin)
+    |-- ingest_data.py        # Ingestion script
+    |-- pyproject.toml        # Dependencies and project configuration
+    `-- uv.lock
 ```
-
 ## Prerequisites
 
 - **Docker & Docker Compose** installed
